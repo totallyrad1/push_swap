@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:57:52 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/22 22:24:11 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/23 21:53:43 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void check(ssize_t nb, char *str, int j, t_list *lst)
 		ft_freeeverything(lst);
 		exit(2);
 	}
-	if (nb > INT_MAX || nb > (size_t)INT_MIN * -1)
+	if (nb > INT_MAX || nb > (ssize_t)INT_MIN * -1)
 	{
 		ft_putstr("Error\n", 2);
 		ft_freeeverything(lst);
@@ -98,16 +98,16 @@ void indexing(t_list **stacka)
 	}
 }
 
-void checksorted(t_list **stacka)
+int checksorted(t_list **stacka)
 {
 	t_list *curr;
 
 	curr = *stacka;
-	while(curr->next != NULL)
+	while(curr->next)
 	{
 		if(curr->content > curr->next->content)
-			return ;
+			return 0;
 		curr = curr->next;
 	}
-	exit(0);
+	return 1;
 }

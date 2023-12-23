@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:32:24 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/22 22:42:59 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/23 21:57:25 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,14 @@ int main(int ac, char **av)
 	{
 		int i = 1;
 		int j = 0;
-		int index = 0;
 		int tnp = 1;
 		int lstsize;
 		int value;
 		stacka = malloc(sizeof(t_list));
 		if(!stacka)
+			exit(2);
+		stackb = malloc(sizeof(t_list));
+		if(!stackb)
 			exit(2);
 		while(i < ac)
 		{
@@ -52,17 +54,18 @@ int main(int ac, char **av)
 			}
 		}
 		indexing(&stacka);
-		checksorted(&stacka);
+		if(checksorted(&stacka) == 1)
+			return 0;
 		lstsize = ft_list_size(stacka);
-		if(lstsize == 2)
-			sort_size_2(&stacka);
-		checksorted(&stacka);
-		t_list *tmp = stacka;
-		while(tmp)
-		{
-			printf("the number %d and its index is %d\n", tmp->content, tmp->index);
-			tmp = tmp->next;
-		}
+		sort_size_5(&stacka, &stackb);
+		if(checksorted(&stacka) == 1)
+			return 0;
+		// t_list *tmp = stacka;
+		// while(tmp)
+		// {
+		// 	printf("the number %d\n", tmp->content);
+		// 	tmp = tmp->next;
+		// }
 		ft_freeeverything(stacka);
 	}
 }

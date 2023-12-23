@@ -41,8 +41,11 @@ int		ft_atoi(char *str, int *j, t_list *lst);
 void	check(ssize_t nb, char *str, int j, t_list *lst);
 void	checkifthenumberexists(t_list **stacka, int value);
 void	indexing(t_list **stacka);
-void	checksorted(t_list **stacka);
+int	checksorted(t_list **stacka);
 //sortingfunction.c
-void sort_size_2(t_list **stack);
+void sort_size_3(t_list **stack);
+void sort_size_5(t_list **stack,t_list **stackb);
+int getmaxindex(t_list **stack);
+int getspot(t_list **stack, int index);
 
 #endif
