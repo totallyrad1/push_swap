@@ -6,11 +6,12 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 10:39:43 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/22 22:41:19 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/24 13:30:58 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void ft_freeeverything(t_list *lst)
 {
@@ -46,10 +47,23 @@ int ft_list_size(t_list *stack)
 {
 	int i = 0;
 	t_list *curr = stack;
+
 	while(curr)
 	{
 		i++;
 		curr = curr->next;
 	}
 	return i;
+}
+
+void	printf_stack(t_list **stack)
+{
+	t_list *tmp;
+
+	tmp = (*stack);
+	while (tmp)
+	{
+		printf("INDEX %d | CONTENT %d\n", tmp->index, tmp->content);
+		tmp = tmp->next;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 22:38:19 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/23 22:26:29 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/24 19:45:23 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,19 @@ int getmaxindex(t_list **stack)
 	return index;
 }
 
+void sort_size_2(t_list **stack)
+{
+	ft_sa(stack, 1);
+}
+
 void sort_size_3(t_list **stack)
 {
-	t_list *curr;
-
-	curr = *stack;
-	while(curr->next)
-		curr = curr->next;
-	if((*stack)->index == getmaxindex(stack))
-	{
+	if(checksorted(stack) == 0 && (*stack)->index > (*stack)->next->index && (*stack)->index > (*stack)->next->next->index)
 		ft_ra(stack, 1);
-		if(checksorted(stack) == 1)
-			return ;
-		ft_sa(stack, 1);
-	}
-	else if(curr->index == getmaxindex(stack))
-		ft_sa(stack, 1);
-	else
-	{
+	if(checksorted(stack) == 0 && ((*stack)->next->next->index < (*stack)->index || (*stack)->next->next->index < (*stack)->next->index))
 		ft_rra(stack, 1);
-		if(checksorted(stack) == 1)
-			return ;
+	if(checksorted(stack) == 0 && ((*stack)->next->next->index > (*stack)->index || (*stack)->next->next->index > (*stack)->next->index))
 		ft_sa(stack, 1);
-	}
 }
 
 int getspot(t_list **stack, int index)
@@ -65,7 +55,7 @@ int getspot(t_list **stack, int index)
 
 	curr = *stack;
 	i = 0;
-	while(curr->index != index)
+	while(curr && curr->index != index)
 	{
 		curr = curr->next;
 		i++;
@@ -96,6 +86,6 @@ void sort_size_5(t_list **stack,t_list **stackb)
 		ft_pb(stack, stackb, 1);
 	}
 	sort_size_3(stack);
-	while((*stackb)->next)
+	while(*stackb)
 		ft_pa(stack, stackb, 1);
 }

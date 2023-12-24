@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:58:26 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/22 22:47:41 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/24 15:52:49 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void ft_pa(t_list **stacka, t_list **stackb, int i)
 {
 	t_list *tmp;
 
-	if(!stackb)
+	if(!(*stackb))
 		return ;
 	tmp = *stacka;
 	*stacka = *stackb;

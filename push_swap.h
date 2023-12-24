@@ -47,5 +47,13 @@ void sort_size_3(t_list **stack);
 void sort_size_5(t_list **stack,t_list **stackb);
 int getmaxindex(t_list **stack);
 int getspot(t_list **stack, int index);
+//pivotessorting.c
+void pivotessorting(t_list **stacka, t_list **stackb);
+void pivotessorting1(t_list **stacka, t_list **stackb);
+void sort_size_2(t_list **stack);
+int getspot(t_list **stack, int index);
+
+//pritn
+void	printf_stack(t_list **stack);
 
 #endif

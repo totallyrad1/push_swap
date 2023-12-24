@@ -1,7 +1,7 @@
 NAME = push_swap
-SOURCES = push_swap.c moves1.c moves2.c moves3.c printingtools.c sortingfunctions.c tools.c helpers.c
+SOURCES = push_swap.c moves1.c moves2.c moves3.c printingtools.c sortingfunctions.c tools.c helpers.c pivotessorting.c
 CC = cc 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 OBJECT = ${SOURCES:.c=.o} 
 
 all : push_swap
