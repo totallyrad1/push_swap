@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:58:26 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 10:25:14 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/25 20:23:09 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,12 @@ void	ft_sb(t_list **stackb, int i)
 		ft_putstr("sb\n", 1);
 }
 
-void	ft_ss(t_list **stacka, t_list **stackb)
+void	ft_ss(t_list **stacka, t_list **stackb, int i)
 {
 	ft_sa(stacka, 0);
 	ft_sb(stackb, 0);
-	ft_putstr("ss\n", 1);
+	if (i)
+		ft_putstr("ss\n", 1);
 }
 
 void	ft_pa(t_list **stacka, t_list **stackb, int i)

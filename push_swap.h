@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 10:30:14 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 11:23:24 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/25 21:22:43 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -33,17 +34,17 @@ int		listsize(t_list *stack);
 //moves1.c
 void	ft_sa(t_list **stacka, int i);
 void	ft_sb(t_list **stackb, int i);
-void	ft_ss(t_list **stacka, t_list **stackb);
+void	ft_ss(t_list **stacka, t_list **stackb, int i);
 void	ft_pa(t_list **stacka, t_list **stackb, int i);
 void	ft_pb(t_list **stacka, t_list **stackb, int i);
 //moves2.c
 void	ft_ra(t_list **stacka, int i);
 void	ft_rb(t_list **stackb, int i);
-void	ft_rr(t_list **stacka, t_list **stackb);
+void	ft_rr(t_list **stacka, t_list **stackb, int i);
 //moves3.c
 void	ft_rra(t_list **stacka, int i);
 void	ft_rrb(t_list **stackb, int i);
-void	ft_rrr(t_list **stacka, t_list **stackb);
+void	ft_rrr(t_list **stacka, t_list **stackb, int i);
 //printingtools.c
 void	ft_putchar(int c, int fd);
 void	ft_putstr(char *str, int fd);
@@ -65,7 +66,21 @@ void	pivotessorting1(t_list **stacka, t_list **stackb);
 void	sort_size_2(t_list **stack);
 int		getspot(t_list **stack, int index);
 
-//pritn
-void	printf_stack(t_list **stack);
+//checker.c
+char	**ft_read(void);
+void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb);
+
+//movesapply.c
+void	applymoves(char *moves, t_list **stacka, t_list **stackb);
+void	applymoves1(char *moves, t_list **stacka, t_list **stackb);
+void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb);
+int		validmove(char *moves);
+
+//others
+char	**ft_split(char const *s, char c);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strdup(char *s1);
+size_t	ft_strlen(char *s);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif

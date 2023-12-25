@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/20 13:32:24 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 15:16:50 by asnaji           ###   ########.fr       */
+/*   Created: 2023/12/25 19:40:00 by asnaji            #+#    #+#             */
+/*   Updated: 2023/12/25 21:03:01 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
 void	fullfillstacka(t_list **stacka, int ac, char **av)
 {
@@ -40,10 +39,38 @@ void	fullfillstacka(t_list **stacka, int ac, char **av)
 	}
 }
 
+char	**ft_read(void)
+{
+	char	*moves;
+	char	*buffer;
+	char	**res;
+	int		bytes_read;
+
+	bytes_read = 1;
+	buffer = malloc(100 + 1);
+	if (!buffer)
+		return (NULL);
+	while (bytes_read > 0)
+	{
+		bytes_read = read(0, buffer, 100);
+		if (bytes_read < 0)
+		{
+			free(buffer);
+			return (NULL);
+		}
+		buffer[bytes_read] = '\0';
+		moves = ft_strjoin(moves, buffer);
+	}
+	free(buffer);
+	res = ft_split(moves, '\n');
+	return (res);
+}
+
 int	main(int ac, char **av)
 {
 	t_list	*stacka;
 	t_list	*stackb;
+	char	**moves;
 
 	stackb = NULL;
 	if (ac != 1)
@@ -53,17 +80,12 @@ int	main(int ac, char **av)
 			exit(2);
 		fullfillstacka(&stacka, ac, av);
 		indexing(&stacka);
-		if (listsize(stacka) != 1)
-		{
-			if (checksorted(&stacka) == 0 && listsize(stacka) == 2)
-				sort_size_2(&stacka);
-			else if (checksorted(&stacka) == 0 && listsize(stacka) == 3)
-				sort_size_3(&stacka);
-			else if (checksorted(&stacka) == 0 && listsize(stacka) == 5)
-				sort_size_5(&stacka, &stackb);
-			else if (checksorted(&stacka) == 0)
-				pivotessorting(&stacka, &stackb);
-		}
+		moves = ft_read();
+		applymovesonstack(moves, &stacka, &stackb);
+		if (checksorted(&stacka) == 1 && stackb == NULL)
+			ft_putstr("OK\n", 1);
+		else
+			ft_putstr("KO\n", 1);
 		ft_freeeverything(stacka);
 	}
 }
