@@ -6,98 +6,97 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 10:22:28 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/24 19:46:37 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/25 11:25:36 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void pivotessorting(t_list **stacka, t_list **stackb)
+void	pivotessorting(t_list **sa, t_list **sb)
 {
-	int	lastpv1;
-	int	pv1;
-	int	pv2;
+	int	lp1;
+	int	p1;
+	int	p2;
 
-	lastpv1 = -1;
-	pv1 = ft_list_size(*stacka) / 3;
-	pv2 = ft_list_size(*stacka) / 6;
-	while(ft_list_size(*stacka) > 3)
+	lp1 = -1;
+	p1 = listsize(*sa) / 3;
+	p2 = listsize(*sa) / 6;
+	while (listsize(*sa) > 3)
 	{
-		if((*stacka)->index < pv1)
-			ft_pb(stacka, stackb, 1);
+		if ((*sa)->index < p1)
+			ft_pb(sa, sb, 1);
 		else
-			ft_ra(stacka,1);
-		if(ft_list_size(*stackb) > 1 && ((*stackb)->index >= lastpv1 && pv2 <= (*stackb)->index))
-			ft_rb(stackb, 1);
-		if(ft_list_size(*stackb) == pv1)
+			ft_ra(sa, 1);
+		if (listsize(*sb) > 1 && ((*sb)->index >= lp1 && p2 <= (*sb)->index))
+			ft_rb(sb, 1);
+		if (listsize(*sb) == p1)
 		{
-			lastpv1 = pv1;
-			pv1 += ft_list_size(*stacka) / 3;
-			pv2 = ft_list_size(*stacka) / 6 + lastpv1;
+			lp1 = p1;
+			p1 += listsize(*sa) / 3;
+			p2 = listsize(*sa) / 6 + lp1;
 		}
 	}
-	sort_size_3(stacka);
-	pivotessorting1(stacka, stackb);
+	sort_size_3(sa);
+	pivotessorting1(sa, sb);
 }
 
-
-void getbottom(t_list **stacka, t_list **bot)
+void	getbottom(t_list **stacka, t_list **bot)
 {
 	*bot = *stacka;
-	while((*bot)->next)
-		*bot = (*bot)->next;	
+	while ((*bot)->next)
+		*bot = (*bot)->next;
 }
 
-void pivotessorting1(t_list **stacka, t_list **stackb)
+void	parrb(t_list **stacka, t_list **stackb, int value, t_list **bota)
 {
-	t_list *bota;
-	int i;
-	
-	i = 0;
-	// int init = 1;
-	getbottom(stacka, &bota);
-	while(stackb)
+	if (getspot(stackb, (*stacka)->index - 1) > listsize(*stackb) / 2)
 	{
-		i = 0;
-		while((*stackb) && (*stackb)->index + 1 != (*stacka)->index)
+		if (((*bota)->index < (*stackb)->index || (*bota)->index == value))
 		{
-			if(getspot(stackb, (*stacka)->index - 1) > ft_list_size(*stackb) / 2)
-			{
-				// printf("THE FIRST \n");
-				if(bota->index < (*stackb)->index)
-				{
-					ft_pa(stacka, stackb, 1);
-					ft_ra(stacka, 1);
-					getbottom(stacka, &bota);
-				}
-				else if(stackb)
-					ft_rrb(stackb, 1);
-			}
-			else
-			{
-				if(bota->index < (*stackb)->index)
-				{
-					ft_pa(stacka, stackb, 1);
-					ft_ra(stacka, 1);
-					getbottom(stacka, &bota);
-				}
-				else if(stackb)
-					ft_rb(stackb, 1);
-			}
+			ft_pa(stacka, stackb, 1);
+			ft_ra(stacka, 1);
+			getbottom(stacka, bota);
 		}
-		if((*stackb)->index == (*stacka)->index - 1)
+		else if (stackb)
+			ft_rrb(stackb, 1);
+	}
+	else
+	{
+		if ((*bota)->index < (*stackb)->index || (*bota)->index == value)
+		{
+			ft_pa(stacka, stackb, 1);
+			ft_ra(stacka, 1);
+			getbottom(stacka, bota);
+		}
+		else if (stackb)
+			ft_rb(stackb, 1);
+	}
+}
+
+void	pivotessorting1(t_list **stacka, t_list **stackb)
+{
+	t_list	*bota;
+	int		value;
+
+	getbottom(stacka, &bota);
+	value = bota->index;
+	while (stackb)
+	{
+		while ((*stackb) && (*stackb)->index + 1 != (*stacka)->index)
+		{
+			parrb(stacka, stackb, value, &bota);
+		}
+		if (*stackb && (*stackb)->index == (*stacka)->index - 1)
 			ft_pa(stacka, stackb, 1);
 		if ((*stacka)->index - 1 == bota->index)
 		{
-			while(bota->index == (*stacka)->index - 1)
+			while (bota->index == (*stacka)->index - 1)
 			{
 				ft_rra(stacka, 1);
 				getbottom(stacka, &bota);
 			}
 		}
-		if(checksorted(stacka) == 1 && *stackb == NULL)
-			break;
-		i++;
+		if (checksorted(stacka) == 1 && *stackb == NULL)
+			break ;
 	}
-	}
+}

@@ -6,20 +6,13 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:32:24 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/24 19:46:27 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/25 11:32:51 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-void leak()
-{
-	system("leaks push_swap");
-}
-
-void fullfillstacka(t_list **stacka,int ac, char **av)
+void	fullfillstacka(t_list **stacka, int ac, char **av)
 {
 	int	i;
 	int	j;
@@ -29,16 +22,16 @@ void fullfillstacka(t_list **stacka,int ac, char **av)
 	i = 1;
 	j = 0;
 	tnp = 1;
-	while(i < ac)
+	while (i < ac)
 	{
 		value = ft_atoi(av[i], &j, *stacka);
-		if(tnp == 1)
+		if (tnp == 1)
 			(*stacka)->content = value;
 		else
 			ft_newnode(stacka, value);
 		tnp = 0;
 		checkifthenumberexists(stacka, value);
-		if(av[i][j] == '\0')
+		if (av[i][j] == '\0')
 		{
 			j = 0;
 			i++;
@@ -46,34 +39,30 @@ void fullfillstacka(t_list **stacka,int ac, char **av)
 	}
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	// atexit(leak);
-	t_list *stacka;
-	t_list *stackb;
+	t_list	*stacka;
+	t_list	*stackb;
 
 	stackb = NULL;
-	if(ac != 1)
+	if (ac != 1)
 	{
-		int lstsize;
 		stacka = malloc(sizeof(t_list));
-		if(!stacka)
+		if (!stacka)
 			exit(2);
 		fullfillstacka(&stacka, ac, av);
 		indexing(&stacka);
-		lstsize = ft_list_size(stacka);
-		if(checksorted(&stacka) == 0 && lstsize == 2)
-			sort_size_2(&stacka);
-		else if(checksorted(&stacka) == 0 && lstsize == 3)
-			sort_size_3(&stacka);
-		else if(checksorted(&stacka) == 0 && lstsize == 5)
-			sort_size_5(&stacka, &stackb);
-		else
-			pivotessorting(&stacka, &stackb);
+		if (listsize(stacka) != 1)
+		{
+			if (checksorted(&stacka) == 0 && listsize(stacka) == 2)
+				sort_size_2(&stacka);
+			else if (checksorted(&stacka) == 0 && listsize(stacka) == 3)
+				sort_size_3(&stacka);
+			else if (checksorted(&stacka) == 0 && listsize(stacka) == 5)
+				sort_size_5(&stacka, &stackb);
+			else if (checksorted(&stacka) == 0)
+				pivotessorting(&stacka, &stackb);
+		}
 		ft_freeeverything(stacka);
-		ft_freeeverything(stackb);
 	}
-	// printf_stack(&stacka);
-	// printf("////////--------------//////////\n");
-	// printf_stack(&stackb);
 }

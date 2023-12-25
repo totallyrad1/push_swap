@@ -6,16 +6,15 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:57:52 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/23 21:53:43 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/25 10:40:08 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-void check(ssize_t nb, char *str, int j, t_list *lst)
+void	check(ssize_t nb, char *str, int j, t_list *lst)
 {
-	if(str[j] == ' ' && str[j + 1] == '\0')
+	if (str[j] == ' ' && str[j + 1] == '\0')
 	{
 		ft_putstr("Error\n", 2);
 		ft_freeeverything(lst);
@@ -38,13 +37,13 @@ void check(ssize_t nb, char *str, int j, t_list *lst)
 int	ft_atoi(char *str, int *j, t_list *lst)
 {
 	ssize_t	result;
-	int	sign;
+	int		sign;
 
 	result = 0;
 	sign = 1;
 	while (str[*j] == 32)
 		(*j)++;
-	if(str[*j] == '\0')
+	if (str[*j] == '\0')
 		check(result, str, *j, lst);
 	if (str[*j] == '+' || str[*j] == '-')
 	{
@@ -63,14 +62,14 @@ int	ft_atoi(char *str, int *j, t_list *lst)
 	return (result * sign);
 }
 
-void checkifthenumberexists(t_list **stacka, int value)
+void	checkifthenumberexists(t_list **stacka, int value)
 {
-	t_list *curr;
-	
+	t_list	*curr;
+
 	curr = *stacka;
-	while(curr->next != NULL)
+	while (curr->next != NULL)
 	{
-		if(value == curr->content)
+		if (value == curr->content)
 		{
 			ft_putstr("Error\n", 2);
 			exit(2);
@@ -79,18 +78,18 @@ void checkifthenumberexists(t_list **stacka, int value)
 	}
 }
 
-void indexing(t_list **stacka)
+void	indexing(t_list **stacka)
 {
-	t_list *curr;
-	t_list *tmp;
+	t_list	*curr;
+	t_list	*tmp;
 
 	curr = *stacka;
-	while(curr)
+	while (curr)
 	{
 		tmp = *stacka;
-		while(tmp)
+		while (tmp)
 		{
-			if(curr->content > tmp->content)
+			if (curr->content > tmp->content)
 				curr->index++;
 			tmp = tmp->next;
 		}
@@ -98,16 +97,16 @@ void indexing(t_list **stacka)
 	}
 }
 
-int checksorted(t_list **stacka)
+int	checksorted(t_list **stacka)
 {
-	t_list *curr;
+	t_list	*curr;
 
 	curr = *stacka;
-	while(curr->next)
+	while (curr->next)
 	{
-		if(curr->content > curr->next->content)
-			return 0;
+		if (curr->content > curr->next->content)
+			return (0);
 		curr = curr->next;
 	}
-	return 1;
+	return (1);
 }
