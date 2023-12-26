@@ -6,11 +6,13 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:40:00 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 21:03:01 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/26 16:44:06 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 void	fullfillstacka(t_list **stacka, int ac, char **av)
 {
@@ -63,6 +65,7 @@ char	**ft_read(void)
 	}
 	free(buffer);
 	res = ft_split(moves, '\n');
+	free(moves);
 	return (res);
 }
 
@@ -85,7 +88,8 @@ int	main(int ac, char **av)
 		if (checksorted(&stacka) == 1 && stackb == NULL)
 			ft_putstr("OK\n", 1);
 		else
-			ft_putstr("KO\n", 1);
+			ft_putstr("KO\n", 2);
+		ft_free(moves);
 		ft_freeeverything(stacka);
 	}
 }

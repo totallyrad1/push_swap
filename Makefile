@@ -1,6 +1,6 @@
 NAME = push_swap
 BNAME = checker
-SOURCES = push_swap.c moves1.c moves2.c moves3.c printingtools.c sortingfunctions.c tools.c helpers.c pivotessorting.c
+SOURCES = push_swap.c moves1.c moves2.c moves3.c printingtools.c sortingfunctions.c tools.c helpers.c pivotessorting.c ft_strjoin.c ft_split.c movesapply.c
 BSOURCES = checker.c moves1.c moves2.c moves3.c printingtools.c sortingfunctions.c tools.c helpers.c pivotessorting.c ft_strjoin.c ft_split.c movesapply.c
 CC = cc 
 FLAGS = -Wall -Wextra -Werror

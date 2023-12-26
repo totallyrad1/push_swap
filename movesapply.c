@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 21:02:38 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 21:23:39 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/26 15:15:45 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	applymovesonstack(char **moves, t_list **stacka, t_list **stackb)
 	{
 		if (validmove(moves[i]) == 0)
 		{
-			ft_putstr("Error", 2);
+			ft_putstr("Error\n", 2);
 			exit(2);
 		}
 		applymoves(moves[i], stacka, stackb);

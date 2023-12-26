@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 10:30:14 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 21:22:43 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/26 14:59:42 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_list
 void	ft_freeeverything(t_list *lst);
 void	ft_newnode(t_list **lst, int value);
 int		listsize(t_list *stack);
+void	ft_free(char **str);
 //moves1.c
 void	ft_sa(t_list **stacka, int i);
 void	ft_sb(t_list **stackb, int i);

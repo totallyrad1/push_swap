@@ -6,11 +6,24 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 10:39:43 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 11:23:14 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/26 15:11:54 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	ft_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	if (str)
+	{
+		while (str[i])
+			free(str[i++]);
+		free(str);
+	}
+}
 
 void	ft_freeeverything(t_list *lst)
 {

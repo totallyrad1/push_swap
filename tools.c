@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:57:52 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 10:40:08 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/26 15:36:43 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	check(ssize_t nb, char *str, int j, t_list *lst)
 		ft_freeeverything(lst);
 		exit(2);
 	}
-	if (nb > INT_MAX || nb > (ssize_t)INT_MIN * -1)
+	if (nb > INT_MAX || nb < INT_MIN)
 	{
 		ft_putstr("Error\n", 2);
 		ft_freeeverything(lst);
@@ -45,7 +45,7 @@ int	ft_atoi(char *str, int *j, t_list *lst)
 		(*j)++;
 	if (str[*j] == '\0')
 		check(result, str, *j, lst);
-	if (str[*j] == '+' || str[*j] == '-')
+	if ((str[*j] == '+' || str[*j] == '-') && str[*j + 1] != '\0')
 	{
 		if (str[*j] == '-')
 			sign *= -1;
@@ -54,7 +54,7 @@ int	ft_atoi(char *str, int *j, t_list *lst)
 	while (str[*j] != ' ' && str[*j] != '\0' )
 	{
 		result = result * 10 + (str[*j] - '0');
-		check(result, str, *j, lst);
+		check(result * sign, str, *j, lst);
 		(*j)++;
 	}
 	while (str[*j] == 32)
