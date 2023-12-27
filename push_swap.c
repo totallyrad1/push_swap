@@ -6,21 +6,18 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:32:24 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/26 16:53:13 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/27 14:28:56 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
 
-void	fullfillstacka(t_list **stacka, int ac, char **av)
+void	fullfillstacka(t_list **stacka, int ac, char **av, int i)
 {
-	int	i;
 	int	j;
 	int	tnp;
 	int	value;
 
-	i = 1;
 	j = 0;
 	tnp = 1;
 	while (i < ac)
@@ -51,7 +48,7 @@ int	main(int ac, char **av)
 		stacka = malloc(sizeof(t_list));
 		if (!stacka)
 			exit(2);
-		fullfillstacka(&stacka, ac, av);
+		fullfillstacka(&stacka, ac, av, 1);
 		indexing(&stacka);
 		if (listsize(stacka) != 1)
 		{

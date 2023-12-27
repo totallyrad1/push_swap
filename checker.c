@@ -6,13 +6,11 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 19:40:00 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/26 16:44:06 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/27 14:17:03 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdlib.h>
-#include <unistd.h>
 
 void	fullfillstacka(t_list **stacka, int ac, char **av)
 {

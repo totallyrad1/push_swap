@@ -6,14 +6,13 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 10:30:14 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/26 14:59:42 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/27 14:17:17 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
