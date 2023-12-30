@@ -68,6 +68,56 @@ now we move into **part 2**
 
 # **part 2**
 
+now we stop using pivots but we use bottom of a **index since its always the biggest number**
+we need 2 integeres
+**biggestnumbervalue = bottoma index**; this is fix we never change it 
+**bottomavalue = bottoma index**; we keep updating this on every move 
+
+<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/6f119e8a-2d54-46e3-ad18-8e65efca2ccc">
+
+the part 2 works like this :
+
+while **stack b still has numbers** we have a loop running 
+in that loop we have another loop we keep pushing into a or rotating b depending on the statements 
+if **botottoma_index** lesser than **topb_index** or **bottoma_index** equal to **biggestnumbervalue**
+  we push the number into a 
+  and we rotate
+  and we update the **bottomavalue**
+else
+  we rotate b untill we find the numbers thats equal to **topa_index - 1**
+
+here since bottom value is equal to the biggest number we **push into a** and **we rotate A** the result will be like this
+
+<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/84ba8f31-8851-4c1d-aac3-797454c04409">
+
+we keep doing the same thing untill we find numbers thats equal to **topa_index - 1**
+
+<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/2622dfc2-b1ab-43a2-81a8-c1fcc1661796">
+
+once we find it we push the number into **the top of stack a** like this
+<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/e02dc9a3-2d6b-4e34-9ad0-2c8ae6683bb0">
+
+now we have another if statement if the index in the **bottom of stack a is equal to top a - 1**
+here 2 is equal to 3 - 1
+<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/3d4f23a8-83fc-452b-8e1c-86c9629660a7">
+we reverse rotate a like this 
+
+<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/8ad08878-6572-4378-a9e5-dc642a3e3304">
+
+**!! dont forget to update the bottom index on every move !!**
+
+we keep doing this process until stack b has no numbers
+
+and this is **the result**
+<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/187dca25-143e-48a2-9743-cba0d8ed45b9">
+
+
+
+
+
+
+
+
 
 
 
