@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 10:22:28 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 11:25:36 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/29 16:07:47 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	pivotessorting1(t_list **stacka, t_list **stackb)
 		{
 			parrb(stacka, stackb, value, &bota);
 		}
-		if (*stackb && (*stackb)->index == (*stacka)->index - 1)
+		while (*stackb && (*stackb)->index == (*stacka)->index - 1)
 			ft_pa(stacka, stackb, 1);
 		if ((*stacka)->index - 1 == bota->index)
 		{

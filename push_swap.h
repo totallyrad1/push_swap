@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 10:30:14 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/27 14:17:17 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/29 16:08:47 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_rrr(t_list **stacka, t_list **stackb, int i);
 void	ft_putchar(int c, int fd);
 void	ft_putstr(char *str, int fd);
 void	ft_putnbr(int nb, int fd);
+int		ft_isdigit(int c);
 //tools.c
 int		ft_atoi(char *str, int *j, t_list *lst);
 void	check(ssize_t nb, char *str, int j, t_list *lst);

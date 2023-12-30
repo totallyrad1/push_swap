@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 14:07:10 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/20 14:21:24 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/29 16:08:40 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,11 @@ void	ft_putnbr(int nb, int fd)
 	}
 	if (nb >= 0 && nb <= 9)
 		ft_putchar(nb + 48, fd);
+}
+
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

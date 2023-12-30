@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 13:57:52 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/26 17:04:01 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/29 16:06:04 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ int	ft_atoi(char *str, int *j, t_list *lst)
 		(*j)++;
 	if (str[*j] == '\0')
 		check(result, str, *j, lst);
-	if ((str[*j] == '+' || str[*j] == '-') && str[*j + 1] != '\0')
+	if ((str[*j] == '+' || str[*j] == '-') && ft_isdigit(str[*j + 1]))
 	{
 		if (str[*j] == '-')
 			sign *= -1;
 		(*j)++;
 	}
-	while (str[*j] != ' ' && str[*j] != '\n' && str[*j] != '\0' )
+	while (str[*j] != ' ' && str[*j] != '\0' )
 	{
 		result = result * 10 + (str[*j] - '0');
 		check(result * sign, str, *j, lst);

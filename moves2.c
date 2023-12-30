@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 11:44:05 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 20:22:49 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/29 14:28:28 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_rb(t_list **stackb, int i)
 	t_list	*tmp;
 	t_list	*curr;
 
-	if (!stackb)
+	if (!(*stackb))
 		return ;
 	tmp = *stackb;
 	*stackb = (*stackb)->next;

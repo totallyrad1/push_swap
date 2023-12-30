@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:58:26 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 20:23:09 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/29 14:28:44 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_sa(t_list **stacka, int i)
 {
 	t_list	*tmp;
 
-	if (!stacka)
+	if (!(*stacka))
 		return ;
 	tmp = *stacka;
 	*stacka = (*stacka)->next;
@@ -30,7 +30,7 @@ void	ft_sb(t_list **stackb, int i)
 {
 	t_list	*tmp;
 
-	if (!stackb)
+	if (!(*stackb))
 		return ;
 	tmp = *stackb;
 	*stackb = (*stackb)->next;
@@ -52,7 +52,7 @@ void	ft_pa(t_list **stacka, t_list **stackb, int i)
 {
 	t_list	*tmp;
 
-	if (!stackb)
+	if (!(*stackb))
 		return ;
 	tmp = *stacka;
 	*stacka = *stackb;
@@ -66,7 +66,7 @@ void	ft_pb(t_list **stacka, t_list **stackb, int i)
 {
 	t_list	*tmp;
 
-	if (!stacka)
+	if (!(*stacka))
 		return ;
 	tmp = *stackb;
 	*stackb = *stacka;

@@ -6,7 +6,7 @@
 /*   By: asnaji <asnaji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 14:43:25 by asnaji            #+#    #+#             */
-/*   Updated: 2023/12/25 20:23:00 by asnaji           ###   ########.fr       */
+/*   Updated: 2023/12/29 16:07:32 by asnaji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_rra(t_list **stacka, int i)
 	t_list	*tmp;
 	t_list	*curr;
 
+	if (!(*stacka))
+		return ;
 	curr = *stacka;
 	while (curr->next->next != NULL)
 		curr = curr->next;
@@ -33,6 +35,8 @@ void	ft_rrb(t_list **stackb, int i)
 	t_list	*tmp;
 	t_list	*curr;
 
+	if (!(*stackb))
+		return ;
 	curr = *stackb;
 	while (curr->next->next != NULL)
 		curr = curr->next;
