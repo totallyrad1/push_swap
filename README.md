@@ -31,7 +31,7 @@ we initialize em like this
 **p1** = sizeofstacka / 3;
 **p2** = sizeofstack / 6;
 
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/1e7d8436-6bfc-479e-9dda-c8d3c72e37d7">
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/1e7d8436-6bfc-479e-9dda-c8d3c72e37d7">
 
 
 keep in mind these arent the numbers these are the index of the numbers 
@@ -43,7 +43,8 @@ else
   we rotate a to get the second number.
 
 like this since 0 is lesser than 3 i pushed that number into stack b
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/7a0d3b52-fe77-49ab-8a21-3e0dc4327564">
+
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/7a0d3b52-fe77-49ab-8a21-3e0dc4327564">
 
 after that we check if the **size of stack b** is **greater than 1** and if the **top of b is greater or equal** than **lp1** and  **lesser or equal** to **p2**
   we **rotate b**
@@ -55,14 +56,18 @@ then we update pivots like this
 
 this is the result after the first pivotes updating 
 i kept doing the same process until **size of b reached p1**
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/e2c605a5-4059-4702-95a1-6626b724904f">
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/e2c605a5-4059-4702-95a1-6626b724904f">
 
 now we keep doing the same thing while **stack a size is greater than 3**
 after that we **have 3 numbers in stack a** 
 and the result is like this 
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/04afcf48-0a1f-45ee-aac5-34326a409c8d">
+
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/04afcf48-0a1f-45ee-aac5-34326a409c8d">
+
 than we sort stack a with our **sort 3 numbers function**
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/9ba49cd9-d2ba-4bab-b9eb-dbd14cf1f272">
+
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/9ba49cd9-d2ba-4bab-b9eb-dbd14cf1f272">
+
 this is the result of part 1 
 now we move into **part 2**
 
@@ -73,7 +78,7 @@ we need 2 integeres
 **biggestnumbervalue = bottoma index**; this is fix we never change it 
 **bottomavalue = bottoma index**; we keep updating this on every move 
 
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/6f119e8a-2d54-46e3-ad18-8e65efca2ccc">
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/6f119e8a-2d54-46e3-ad18-8e65efca2ccc">
 
 the part 2 works like this :
 
@@ -88,28 +93,32 @@ else
 
 here since bottom value is equal to the biggest number we **push into a** and **we rotate A** the result will be like this
 
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/84ba8f31-8851-4c1d-aac3-797454c04409">
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/84ba8f31-8851-4c1d-aac3-797454c04409">
 
 we keep doing the same thing untill we find numbers thats equal to **topa_index - 1**
 
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/2622dfc2-b1ab-43a2-81a8-c1fcc1661796">
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/2622dfc2-b1ab-43a2-81a8-c1fcc1661796">
 
 once we find it we push the number into **the top of stack a** like this
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/e02dc9a3-2d6b-4e34-9ad0-2c8ae6683bb0">
+
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/e02dc9a3-2d6b-4e34-9ad0-2c8ae6683bb0">
 
 now we have another if statement if the index in the **bottom of stack a is equal to top a - 1**
 here 2 is equal to 3 - 1
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/3d4f23a8-83fc-452b-8e1c-86c9629660a7">
+
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/3d4f23a8-83fc-452b-8e1c-86c9629660a7">
+
 we reverse rotate a like this 
 
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/8ad08878-6572-4378-a9e5-dc642a3e3304">
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/8ad08878-6572-4378-a9e5-dc642a3e3304">
 
 **!! dont forget to update the bottom index on every move !!**
 
 we keep doing this process until stack b has no numbers
 
 and this is **the result**
-<img width="1294" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/187dca25-143e-48a2-9743-cba0d8ed45b9">
+
+<img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/187dca25-143e-48a2-9743-cba0d8ed45b9">
 
 
 
