@@ -83,6 +83,7 @@ we need 2 integeres
 the part 2 works like this :
 
 while **stack b still has numbers** we have a loop running 
+
 in that loop we have another loop we keep pushing into a or rotating b depending on the statements 
 if **botottoma_index** lesser than **topb_index** or **bottoma_index** equal to **biggestnumbervalue**
   we push the number into a 
