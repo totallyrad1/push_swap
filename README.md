@@ -51,9 +51,9 @@ after that we check if the **size of stack b** is **greater than 1** and if the 
   we **rotate b**
 we keep doing the same thing until **the size of b reaches p1**
 then we update pivots like this 
-**lp1 = p1**
-**p1 += sizea / 3**
-**p2 = sizeb / 6 + lp1**
+**lp1 = p1** ;
+**p1 += sizea / 3**; 
+**p2 = sizeb / 6 + lp1**;
 
 this is the result after the first pivotes updating 
 i kept doing the same process until **size of b reached p1**
