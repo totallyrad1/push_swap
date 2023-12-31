@@ -27,15 +27,16 @@ first u need function that sorts 3 numbers 4 numbers and 5 numbers thats easy !
 then lets get the explanation
 first we use 3 integeres lets call em **lastp1** and **p1** and **p2**
 we initialize em like this
-**lp1** = -1;
-**p1** = sizeofstacka / 3;
-**p2** = sizeofstack / 6;
+**lp1** = -1;.
+**p1** = sizeofstacka / 3;.
+**p2** = sizeofstack / 6;.
 
 <img width="500" alt="image" src="https://github.com/totallyrad1/push_swap/assets/67210558/1e7d8436-6bfc-479e-9dda-c8d3c72e37d7">
 
 
-keep in mind these arent the numbers these are the index of the numbers 
-okay the first thing we do is that we keep pushing numbers into stack b **while size of stack a is greater than 3**
+keep in mind these arent the numbers these are the index of the numbers .
+okay the first thing we do is that we keep pushing numbers into stack b **while size of stack a is greater than 3**.
+
 it works like this 
 if top a index is lesser than **p1**
   we **push the first number** into **stack b**
