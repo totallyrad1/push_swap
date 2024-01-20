@@ -3,9 +3,9 @@
 # usage :
 
 **for_push_swap**
-1. make at the root of your repository[\n]
-2. execute ./push_swap <numbers_u_want_it_to_sort>`\n`
-3. the program will display instruction used to sort the numbers.`\n`
+1. make at the root of your repository.  
+2. execute ./push_swap <numbers_u_want_it_to_sort>.
+3. the program will display instruction used to sort the numbers.
 
 **for_checker**
 1. make bonus at the root of your repository
@@ -86,12 +86,12 @@ the part 2 works like this :
 while **stack b still has numbers** we have a loop running 
 
 in that loop we have another loop we keep pushing into a or rotating b depending on the statements 
-if **botottoma_index** lesser than **topb_index** or **bottoma_index** equal to **biggestnumbervalue**
-  we push the number into a 
-  and we rotate
-  and we update the **bottomavalue**
-else
-  we rotate b untill we find the numbers thats equal to **topa_index - 1**
+if **botottoma_index** lesser than **topb_index** or **bottoma_index** equal to **biggestnumbervalue**  
+  we push the number into a  
+  and we rotate  
+  and we update the **bottomavalue**  
+else  
+  we rotate b untill we find the numbers thats equal to **topa_index - 1**  
 
 here since bottom value is equal to the biggest number we **push into a** and **we rotate A** the result will be like this
 
