@@ -3,7 +3,7 @@
 # usage :
 
 **for_push_swap**
-1. make at the root of your repository`\n`
+1. make at the root of your repository[\n]
 2. execute ./push_swap <numbers_u_want_it_to_sort>`\n`
 3. the program will display instruction used to sort the numbers.`\n`
 
